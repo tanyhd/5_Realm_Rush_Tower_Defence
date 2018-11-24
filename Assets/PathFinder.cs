@@ -8,12 +8,35 @@ public class PathFinder : MonoBehaviour {
     Dictionary<Vector2Int, WayPoint> grid = new Dictionary<Vector2Int, WayPoint>();
     [SerializeField] WayPoint startWaypoint;
     [SerializeField] WayPoint endWaypoint;
+    Vector2Int[] directions = {
+        Vector2Int.up,
+        Vector2Int.right,
+        Vector2Int.left,
+        Vector2Int.down
+    };
 
 	// Use this for initialization
 	void Start () {
         LoadBlocks();
         ColorStartAndEnd();
+        ExploreNeighbours();
 	}
+
+    private void ExploreNeighbours()
+    {
+        foreach (Vector2Int direction in directions)
+        {
+            Vector2Int explorationCoordinates = startWaypoint.GetGridPos() + direction;
+            try
+            {
+                grid[explorationCoordinates].SetTopColor(Color.blue);
+            }
+            catch
+            {
+                // Do nothing
+            }
+        }
+    }
 
     private void ColorStartAndEnd()
     {
