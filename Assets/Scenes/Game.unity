@@ -235,6 +235,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000427251501790, guid: 63a455959b2ae7748b0a1a4a0e6a0cd3,
     type: 2}
   m_PrefabInternal: {fileID: 148047959}
+--- !u!114 &148047964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114472274515341404, guid: 63a455959b2ae7748b0a1a4a0e6a0cd3,
+    type: 2}
+  m_PrefabInternal: {fileID: 148047959}
+  m_Script: {fileID: 11500000, guid: 03da769c6df2372419cb329eccdd3f51, type: 3}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +490,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000427251501790, guid: 63a455959b2ae7748b0a1a4a0e6a0cd3,
     type: 2}
   m_PrefabInternal: {fileID: 322433215}
+--- !u!114 &322433217 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114472274515341404, guid: 63a455959b2ae7748b0a1a4a0e6a0cd3,
+    type: 2}
+  m_PrefabInternal: {fileID: 322433215}
+  m_Script: {fileID: 11500000, guid: 03da769c6df2372419cb329eccdd3f51, type: 3}
 --- !u!1001 &434535953
 Prefab:
   m_ObjectHideFlags: 0
@@ -545,12 +557,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000427251501790, guid: 63a455959b2ae7748b0a1a4a0e6a0cd3,
     type: 2}
   m_PrefabInternal: {fileID: 434535953}
---- !u!114 &434535955 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114472274515341404, guid: 63a455959b2ae7748b0a1a4a0e6a0cd3,
-    type: 2}
-  m_PrefabInternal: {fileID: 434535953}
-  m_Script: {fileID: 11500000, guid: 03da769c6df2372419cb329eccdd3f51, type: 3}
 --- !u!4 &482020331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000427251501790, guid: 63a455959b2ae7748b0a1a4a0e6a0cd3,
@@ -933,12 +939,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000427251501790, guid: 63a455959b2ae7748b0a1a4a0e6a0cd3,
     type: 2}
   m_PrefabInternal: {fileID: 1211942414}
---- !u!114 &1224382194 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114472274515341404, guid: 63a455959b2ae7748b0a1a4a0e6a0cd3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1127499959}
-  m_Script: {fileID: 11500000, guid: 03da769c6df2372419cb329eccdd3f51, type: 3}
 --- !u!1001 &2068962148
 Prefab:
   m_ObjectHideFlags: 0
@@ -1114,6 +1114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3ce53d40f96224aa9a5d7520aa50b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startWaypoint: {fileID: 434535955}
-  endWaypoint: {fileID: 1224382194}
+  startWaypoint: {fileID: 148047964}
+  endWaypoint: {fileID: 322433217}
   isRunning: 1

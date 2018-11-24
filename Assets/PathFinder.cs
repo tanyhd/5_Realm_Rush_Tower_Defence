@@ -23,19 +23,20 @@ public class PathFinder : MonoBehaviour {
         LoadBlocks();
         ColorStartAndEnd();
         PathFind();
-        // ExploreNeighbours();
 	}
 
     private void PathFind()
     {
         queue.Enqueue(startWaypoint);
-        while (queue.Count > 0)
+        while (queue.Count > 0 && isRunning)
         {
             WayPoint searchCenter = queue.Dequeue();
+            searchCenter.isExplored = true;
             print("Searching from: " + searchCenter);   // todo remove log
             HaltIfEndFound(searchCenter);
+            ExploreNeighbours(searchCenter);
         }
-
+        // todo work out path!
         print("Finish pathfinding?");
     }
 
@@ -48,19 +49,36 @@ public class PathFinder : MonoBehaviour {
         }
     }
 
-    private void ExploreNeighbours()
+    private void ExploreNeighbours(WayPoint searchingFrom)
     {
+        if (!isRunning) { return; }
+
         foreach (Vector2Int direction in directions)
         {
-            Vector2Int explorationCoordinates = startWaypoint.GetGridPos() + direction;
+            Vector2Int neighbourCoordinates = searchingFrom.GetGridPos() + direction;
             try
             {
-                grid[explorationCoordinates].SetTopColor(Color.blue);
+                QueueNewNeighours(neighbourCoordinates);
             }
             catch
             {
                 // Do nothing
             }
+        }
+    }
+
+    private void QueueNewNeighours(Vector2Int neighbourCoordinates)
+    {
+        WayPoint neighbour = grid[neighbourCoordinates];
+        if (neighbour.isExplored)
+        {
+            // Do nothing
+        }
+        else
+        {
+            neighbour.SetTopColor(Color.blue);   // todo move later
+            queue.Enqueue(neighbour);
+            print("Queueing " + neighbour);
         }
     }
 
