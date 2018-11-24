@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class WayPoint : MonoBehaviour {
 
-    public bool isExplored = false; // ok as is a data class
+    [SerializeField] Color exploredColor = Color.blue;
+
+    // public ok here as this is a data class
+    public bool isExplored = false;
+    public WayPoint exploreFrom;
+
     const int gridSize = 10;
     Vector2Int gridPos;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
+    private void Update()
+    {
+        if (exploreFrom)
+        {
+            SetTopColor(exploredColor);
+        }
+    }
 
     public int GetGridSize()
     {
