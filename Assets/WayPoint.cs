@@ -24,9 +24,10 @@ public class WayPoint : MonoBehaviour {
             Mathf.RoundToInt(transform.position.z / gridSize) * gridSize
         );
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void SetTopColor(Color color)
+    {
+        MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
+        topMeshRenderer.material.color = color;
+    }
 }
