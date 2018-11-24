@@ -15,10 +15,10 @@ public class WayPoint : MonoBehaviour {
 
     private void Update()
     {
-        if (exploreFrom)
+        /*if (exploreFrom)
         {
             SetTopColor(exploredColor);
-        }
+        }*/
     }
 
     public int GetGridSize()

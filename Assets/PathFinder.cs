@@ -10,7 +10,8 @@ public class PathFinder : MonoBehaviour {
     [SerializeField] WayPoint endWaypoint;
     Queue<WayPoint> queue = new Queue<WayPoint>();
     bool isRunning = true;
-    WayPoint searchCenter;  // the current searchCenter
+    WayPoint searchCenter;
+    List<WayPoint> path = new List<WayPoint>();
 
     Vector2Int[] directions = {
         Vector2Int.up,
@@ -19,14 +20,31 @@ public class PathFinder : MonoBehaviour {
         Vector2Int.down
     };
 
-	// Use this for initialization
-	void Start () {
+
+    public List<WayPoint> GetPath()
+    {
         LoadBlocks();
         ColorStartAndEnd();
-        PathFind();
-	}
+        BreadthFirstSearch();
+        CreatePath();
+        return path;
+    }
 
-    private void PathFind()
+    private void CreatePath()
+    {
+        path.Add(endWaypoint);
+
+        WayPoint previous = endWaypoint.exploreFrom;
+        while (previous != startWaypoint)
+        {
+            path.Add(previous);
+            previous = previous.exploreFrom;
+        }
+        path.Add(startWaypoint);
+        path.Reverse();
+    }
+
+    private void BreadthFirstSearch()
     {
         queue.Enqueue(startWaypoint);
         while (queue.Count > 0 && isRunning)
@@ -36,8 +54,6 @@ public class PathFinder : MonoBehaviour {
             HaltIfEndFound();
             ExploreNeighbours();
         }
-        // todo work out path!
-        print("Finish pathfinding?");
     }
 
     private void HaltIfEndFound()
@@ -56,13 +72,9 @@ public class PathFinder : MonoBehaviour {
         foreach (Vector2Int direction in directions)
         {
             Vector2Int neighbourCoordinates = searchCenter.GetGridPos() + direction;
-            try
+            if (grid.ContainsKey(neighbourCoordinates))
             {
                 QueueNewNeighours(neighbourCoordinates);
-            }
-            catch
-            {
-                // Do nothing
             }
         }
     }
@@ -104,9 +116,4 @@ public class PathFinder : MonoBehaviour {
         }
 
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }
