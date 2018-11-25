@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour {
 
-    [SerializeField] Transform objectToPan;
+    [SerializeField] List<Transform> objectToPan = new List<Transform>();
     [SerializeField] Transform targetEnemy;
 
 	// Update is called once per frame
 	void Update () {
-        objectToPan.LookAt(targetEnemy);
+        foreach (Transform transform in objectToPan)
+        {
+            transform.LookAt(targetEnemy);
+        }
 	}
 }

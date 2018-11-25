@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4731111272230074}
   - component: {fileID: 33878116006188786}
   - component: {fileID: 23881084430926558}
+  - component: {fileID: 65517052484679188}
+  - component: {fileID: 114590440178539230}
   m_Layer: 0
   m_Name: Enemy_A
   m_TagString: Untagged
@@ -113,6 +115,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1289626262284874}
   m_Mesh: {fileID: 4300000, guid: 042c32b34794f584aa882ba5397f2c19, type: 3}
+--- !u!65 &65517052484679188
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1289626262284874}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.000004, y: 14, z: 13.000003}
+  m_Center: {x: 0, y: 7, z: 0}
 --- !u!114 &114255083848736094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,3 +138,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790ae3a11b0899d4aa9b660f354d5b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114590440178539230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1289626262284874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e7e91d22268564085cf925774536d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hit: 100
+  deathFX: {fileID: 1312295461191600, guid: d8a067b027ac56043a48d4a3a4138c67, type: 2}
