@@ -9,9 +9,9 @@ public class Tower : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        foreach (Transform transform in objectToPan)
+        foreach (Transform gameObjects in objectToPan)
         {
-            transform.LookAt(targetEnemy);
+            gameObjects.LookAt(targetEnemy);
         }
 	}
 }
