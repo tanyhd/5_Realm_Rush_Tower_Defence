@@ -20,7 +20,6 @@ public class PathFinder : MonoBehaviour {
         Vector2Int.down
     };
 
-
     public List<WayPoint> GetPath()
     {
         if (path.Count == 0)
@@ -33,7 +32,6 @@ public class PathFinder : MonoBehaviour {
     private void CalculatePath()
     {
         LoadBlocks();
-        ColorStartAndEnd();
         BreadthFirstSearch();
         CreatePath();
     }
@@ -99,12 +97,6 @@ public class PathFinder : MonoBehaviour {
             queue.Enqueue(neighbour);
             neighbour.exploreFrom = searchCenter;
         }
-    }
-
-    private void ColorStartAndEnd()
-    {
-        startWaypoint.SetTopColor(Color.green);
-        endWaypoint.SetTopColor(Color.red);
     }
 
     private void LoadBlocks()
