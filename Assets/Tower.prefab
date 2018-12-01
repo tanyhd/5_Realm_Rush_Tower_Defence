@@ -231,7 +231,6 @@ MonoBehaviour:
   objectToPan:
   - {fileID: 4758497289918230}
   - {fileID: 4795051011752806}
-  targetEnemy: {fileID: 0}
   attackRange: 30
   projectileParticle: {fileID: 198210010306285710}
 --- !u!198 &198210010306285710
