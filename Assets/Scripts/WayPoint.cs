@@ -9,16 +9,14 @@ public class WayPoint : MonoBehaviour {
     // public ok here as this is a data class
     public bool isExplored = false;
     public WayPoint exploreFrom;
+    public bool isPlaceable = true;
 
     const int gridSize = 10;
     Vector2Int gridPos;
 
     private void Update()
     {
-        /*if (exploreFrom)
-        {
-            SetTopColor(exploredColor);
-        }*/
+
     }
 
     public int GetGridSize()
@@ -36,6 +34,16 @@ public class WayPoint : MonoBehaviour {
 
     void OnMouseOver()
     {
-        print(gameObject.name);
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (isPlaceable)
+            {
+                print(gameObject.name + " tower placement");
+            }
+            else
+            {
+                print("Cannot be place here");
+            }
+        }
     }
 }
