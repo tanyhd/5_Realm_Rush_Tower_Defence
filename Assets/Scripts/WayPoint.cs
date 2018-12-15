@@ -10,14 +10,10 @@ public class WayPoint : MonoBehaviour {
     public bool isExplored = false;
     public WayPoint exploreFrom;
     public bool isPlaceable = true;
+    [SerializeField] Tower towerPrefab;
 
     const int gridSize = 10;
     Vector2Int gridPos;
-
-    private void Update()
-    {
-
-    }
 
     public int GetGridSize()
     {
@@ -38,7 +34,8 @@ public class WayPoint : MonoBehaviour {
         {
             if (isPlaceable)
             {
-                print(gameObject.name + " tower placement");
+                Instantiate(towerPrefab, transform.position, Quaternion.identity);
+                isPlaceable = false;
             }
             else
             {
