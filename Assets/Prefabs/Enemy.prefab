@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1bf1324496ec34f9fd6caf90eb304f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 20
+  hitPoints: 2
   deathVFX: {fileID: 198537984209914932, guid: 1a51bfda454239a41afb7dee687c6ac0, type: 3}
   collisionMesh: {fileID: 65598544800772234}
   hitParticlePrefab: {fileID: 5928389773217846766}
